@@ -5,7 +5,8 @@ module.exports = function (environment) {
     modulePrefix: 'dummy',
     environment,
     rootURL: '/',
-    locationType: 'history',
+    locationType: 'trailing-history',
+
     EmberENV: {
       EXTEND_PROTOTYPES: false,
       FEATURES: {
@@ -18,6 +19,21 @@ module.exports = function (environment) {
       // Here you can pass flags/options to your application instance
       // when it is created
     },
+
+    'field-guide': {
+      name: 'Ember Blur Addon',
+      tagLine: 'Field Guide',
+
+      social: [
+        {
+          name: 'github',
+          title: 'Ember Blur Addon',
+          link: 'https://github.com/geneukum/ember-blur',
+        },
+      ],
+    },
+
+    historySupportMiddleware: true,
   };
 
   if (environment === 'development') {
