@@ -16,6 +16,8 @@ module.exports = function (defaults) {
 
   const { maybeEmbroider } = require('@embroider/test-setup');
   return maybeEmbroider(app, {
+    // field-guide uses dynamic components internally
+    staticComponents: false,
     skipBabel: [
       {
         package: 'qunit',
