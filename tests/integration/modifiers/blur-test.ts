@@ -3,6 +3,8 @@ import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
 
+import type { TestContext } from '@ember/test-helpers';
+
 const defaultBlurredCfg = {
     filter: 'blur(1.5px)',
     opacity: '0.5',
@@ -17,6 +19,12 @@ const defaultBlurredCfg = {
     transition: 'all 0.2s linear 0s',
     userSelect: 'auto',
   };
+
+interface BlurTestContext extends TestContext {
+  customFilter?: string;
+  customOpacity?: string;
+  customTransition?: string;
+}
 
 module('Integration | Modifier | blur', function (hooks) {
   setupRenderingTest(hooks);
@@ -37,10 +45,10 @@ module('Integration | Modifier | blur', function (hooks) {
     });
   });
 
-  test('it supports a custom opacity', async function (assert) {
+  test('it supports a custom opacity', async function (this: BlurTestContext, assert) {
     this.set('customOpacity', '0.75');
 
-    await render(
+    await render<BlurTestContext>(
       hbs`<div data-test-div {{blur opacity=this.customOpacity}}></div>`
     );
 
@@ -50,10 +58,10 @@ module('Integration | Modifier | blur', function (hooks) {
     });
   });
 
-  test('it supports a custom filter', async function (assert) {
+  test('it supports a custom filter', async function (this: BlurTestContext, assert) {
     this.set('customFilter', 'blur(3px)');
 
-    await render(
+    await render<BlurTestContext>(
       hbs`<div data-test-div {{blur filter=this.customFilter}}></div>`
     );
 
@@ -63,10 +71,10 @@ module('Integration | Modifier | blur', function (hooks) {
     });
   });
 
-  test('it supports a custom transition', async function (assert) {
+  test('it supports a custom transition', async function (this: BlurTestContext, assert) {
     this.set('customTransition', 'all 1s ease 1s');
 
-    await render(
+    await render<BlurTestContext>(
       hbs`<div data-test-div {{blur transition=this.customTransition}}></div>`
     );
 
