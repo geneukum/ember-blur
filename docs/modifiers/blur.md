@@ -1,7 +1,7 @@
 # Use the default settings
 
 ```handlebars{data-execute=false}
-{{blur}}
+<h1 {{blur}}>Hello World</h1>
 ```
 
 # Use the custom options
@@ -12,5 +12,5 @@
 - `transition` _String (default: 'all .2s linear')_: The animated transitions between element states.
 
 ```handlebars{data-execute=false}
-{{blur opacity='0.75'}}
+<h1 {{blur opacity='0.75'}}>Hello World</h1>
 ```

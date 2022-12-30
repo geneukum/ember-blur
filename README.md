@@ -21,7 +21,7 @@ ember install ember-blur
 You can use this modifier like you would with any other EmberJS modifier.
 
 ```
-{{blur}}
+<h1 {{blur}}>Hello World</h1>
 ```
 
 See the [API Docs](https://ember-blur.netlify.app) for additional information.
