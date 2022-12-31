@@ -1,7 +1,7 @@
 {
   "name": "ember-blur",
   "version": "0.2.1",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "Ember modifier to blur an element.",
   "keywords": [
     "addon",
     "blur",
